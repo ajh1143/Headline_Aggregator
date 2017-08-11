@@ -22,16 +22,17 @@ def DrudgeScrape():
   stringed = str(div)
   RedHeadLine = div.find_all("font", attrs={'color': 'red'})
   if RedHeadLine:
-      print("Important Top Story:\n")
-      print(div.get_text())
+      print("Important Front Page Story:\n"+div.get_text().strip()+"\n")
   else:
-      print("Top Story: " + div.get_text())
+      print("Front Page Story: " + div.get_text())
 
   #redlines - Checks the rest of the stories for "red" status, prints matches
-  print("Here are the rest of the important headlines:")
+  print("Here are the rest of the red-status headlines:")
   div2 = soup.find_all("font", attrs={'color': 'red'})
   for i in div2:
-      print(i.get_text())
+      otherheadlines = i.get_text().strip()
+      if str(otherheadlines) != str(div.get_text().strip()):
+          print(i.get_text().strip()+"\n")
 
 def CnnScrape():
   #full page screenshot generator
