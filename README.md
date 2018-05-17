@@ -6,5 +6,8 @@ Detects breaking news from the traditional news sources, and detects Drudge spec
 
 Updates hourly, or other defined time intervals.
 
-Future Additions:
+Future Addition Ideas:
+
+Allow user to input a parameter to monitor for, i.e., input 'snow' to monitor for stories about snowfall.
+
 Retrieve picture snapshot of each page's headline regions, compiles images into pdf. 
